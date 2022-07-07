@@ -1,0 +1,32 @@
+Module 1: Introduction to Amazon Web Services
+
+AWS Service offerings:
+    - Compute
+    - Storage
+    - Network Security
+    - Blockchain
+    - Machine Learning
+    - Artificial Intelligence
+    - Robot Development
+    - Video Production
+    - Orbital Satellites 
+
+Amazon Elastic Compute Cloud (Amazon EC2): It is a virtual Server in the cloud. 
+
+Pay for what you need becomes the key point for running your business on AWS. 
+
+Module 2: Getting Started with Cloud Acquisition
+
+AWS responsibility includes:
+    - Compute
+    - Storage
+    - Database
+    - Networking
+
+AWS global infrastructure includes:
+    - Regions
+    - Availability Zones
+    - Edge Locations
+
+Six key areas affect how cloud is bought: Pricing, Security, Data Residency, Sustainability, 
+Governance and terms and conditions. 

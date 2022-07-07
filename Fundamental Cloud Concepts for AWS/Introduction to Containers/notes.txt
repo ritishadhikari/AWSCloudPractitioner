@@ -1,0 +1,22 @@
+A container is a standardized unit of software. 
+
+Containers run over a Containerized Platform and shares the Operating System's kernel enabling to create 
+container images using file system layers. Because Containers isolates softwares from the other layers, the
+code runs identically across different environments. 
+
+Benefits of Dockers include:
+    - Portable runtime application environment
+    - Package application and dependencies in a single, immutable artifacts
+    - Ability to run different application versions with different dependencies simlutaneously
+    - Faster development and deployment cycles
+    - Better resource utilization and efficiency
+
+Characteristics of Microservices:
+    - Decentralized, evolutionary design
+    - Smart Endpoints, dumb pipes
+    - Independent Products, not projects 
+    - Designed for failure
+    - Disposability
+    - Development and Production Parity
+
+
