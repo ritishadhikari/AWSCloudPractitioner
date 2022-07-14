@@ -53,3 +53,19 @@ Pillars of Well Architected Framework:
     - Performance Efficiency: The ability to use computing resources efficiently to meet system 
     requirements and to maintain that efficiency as demand changes and technology evolves
     - Cost Optimization: The ability to achieve business outcomes at the lowest price point.
+
+Amazon Congnito: 
+    - Supports Multiple Login Providers
+    - Unique Users/devices
+    - Helps implement security best practices
+
+AWS provides a way to record resource configuration changes as they occur, and evaluate them against rules 
+you configure by the AWS configuration service. With conformance packs for AWS config, you configure rules
+coupled with automated remediation. This enables us to automate response to misconfigurations. 
+
+Reliability is the ability of a workload to perform its intended function correctly and consistently when
+it's expected to. This includes the ability operate and test the workload through its total lifecyle.
+To achive Reliability, we focus on resiliency:
+    - Recover from infrastructure or service disruptions
+    - Dynamically acquire computing resources to meet demand
+    - Mitigate Disruptions
