@@ -1,0 +1,129 @@
+Module 2: Compute in the Cloud- 
+
+EC2: 
+    - Highly Flexible
+    - Cost-Effective
+    - Quick
+
+Multitenancy:  Sharing Underlying Hardware between virtual machines. 
+
+Amazon EC2 Configurations:
+    - OS: 
+        - Windows
+        - Linux
+    - Software
+        - Internal Business applications
+        - Web Apps 
+        - Databases
+        - 3rd Party Softwares
+EC2 instances are vertically scalable - More CPU and Memories as per need.
+
+We can also control the networking aspect of Amazon EC2. 
+
+Each Amazon EC2 instance type is grouped under an instance family. 
+
+Amazon EC2 instance families:
+    - General Purpose 
+        - Balance resources
+        - Diverse Workloads
+        - Web Servers
+        - Code Repositories
+    - Compute Optimized
+        - Compute Intensive Tasks
+        - Gaming Servers
+        - High Performance Computing (HPC)
+        - Scientific Modelling
+    - Memory Optimized
+        - Memory Intensive Tasks
+    - Accelarated computing
+        - Utilizes Hardware Accelarators
+        - Floating Point Number Calculations
+        - Graphics Processing
+        - Data Pattern Matching
+    - Storage Optimized
+        - High Performance for Locally Stored Data
+
+EC2 Pricing:
+    - On Demand: You only pay for the duration you run the EC2 instance for. 
+    - Savings Plan: Low Prices on EC2 usage, in exchange to a commitment to a consistent amount
+    of usage, measured in Dollars per Hour for a one or three year term. Can provide savings of 
+    upto 72% on AWS compute usage. 
+    - Reserved Instances: Suitable for steady state workloads, ones with predictable usage and 
+    offers upto 75% discount vs On-Demand Pricing. Commitment for atleast 1 or 3 year terms  
+    - Spot Instances: Request to use spare AWS EC2 instance for upto 90% discount of the 
+    on-demand price. AWS can reclaim the instance anytime they need it giving 2 Minute warning
+    to finish up the work and save the state.
+    - Dedicated Hosts: Physical Hosts dedicated for specific usage. Used generally for meeting
+    a certain compliance requirements and no one will share tenancy of that host. 
+
+Scaling Amazon EC2: 
+    - Amazon EC2 Auto Scaling enables you to automatically add or remove Amazon EC2 instances
+    in response to changing application demand. By automatically scaling your instances in and
+    out as needed, you are able to maintain a greater sense of application availability. 
+    - Two Approaches to Auto Scaling:
+        - Dynamic Scaling: Responds to changing demand
+        - Predictive Scaling: Automatically schedules the right number of Amazon EC2 instances 
+        based on predicted demand. 
+
+Directing Traffic with Load Balancing:
+    - A Load Balancer is an application which takes in requests and routes them to the 
+    instances to be processed. 
+    - Elastic Load Balancing or ELB is a managed service and is engineered to do the 
+    undifferentiated heavy lifting of load balancing
+    - ELB is regional, and hence the solution is highly available with no additional effort
+    on our part. 
+    - ELB is automatically scalable, as our traffic grows, ELB is designed to handle the 
+    additional throughput with no change to the hourly cost. When our EC2 fleet autoscales out 
+    as each instance comes online, AutoScaling service just lets the load balancing service 
+    know that it's ready to handle the traffic and off it goes.  When the Fleet goes down, 
+    ELB first stops the all new traffic and waits for the existing requests to be complete and 
+    drain out.
+    - The Autoscaling instances can terminate the instances without disruptions to existing 
+    customers. 
+    - Backend Network traffic can also be solved through an ELB. Because ELB is regional, 
+    its a single URL that each frontend instance uses, than the ELB directs the traffic to 
+    the backend that has the least outstanding requests. If the backend scales, once the new
+    instance is ready, it just tells the ELB that it can take traffic and it gets to work. The
+    Frontend does not know and does not care how many backend instances are running
+
+Messaging and Queuing:
+    - In a loosely coupled architecture, single failure won't cause cascading failures. 
+    - Amazon Simple Queue Service (SQS) and Amazon Simple Notification Service (SNS) are
+    two services based on the loosely couple architecture. 
+    - Simple Queing Service:
+        - Send Messages
+        - Store Message and 
+        - Receive Message between Software components at any volume
+        - Data Contained within a message is called the payload and it is protected until delivery
+        - Amazon SQS queues are where messages are placed until they are processed. 
+    - Simple Notification Service:
+        - Send Messages
+        - Send Notifications to end users through a Pub/Sub Model
+        - Amazon SNS topic: A Channel for messages to be delivered.
+        - Configure Subscribers to that topic and find the published messages for the Subscribers
+
+Additional Compute Services:
+    - AWS offers multiple serverless compute options: 
+        - AWS Lambda:
+            - Lambda is a service which allows you to upload your code in lambda functions 
+            - We then need to configure a trigger and from there, the service waits for the
+            trigger
+            - When the trigger is detected, the code is automatically run in a managed environment.
+            - It is designed to run code which are generally under 15 minutes hence it is 
+            suitable for quick processing like handling requests
+        - AWS Fargate: 
+            - If we do not want to manage the underlying Clusters of ECS or EKS than eventually uses
+            EC2 instances to be managed, then we use AWS Fargate which can manage the EC2 instances. 
+            
+    - AWS Container Services: 
+        - Incase we need access to the underlying environment, and still want efficiency
+            and portability
+            - AWS Elastic Container Service (Amazon ECS)
+            - AWS Elastic Kubernetes Service (Amazon EKS)
+                - They both runs on Docker Containers which uses Operating System Level 
+                Virtualization to deliver software in Containers
+                - These containers run on top of EC2 instances and run in isolation to each
+                other. 
+                - Orchestration tools were created to manage the containers 
+            
+        
