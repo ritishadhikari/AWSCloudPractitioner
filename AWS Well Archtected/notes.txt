@@ -69,3 +69,4 @@ To achive Reliability, we focus on resiliency:
     - Recover from infrastructure or service disruptions
     - Dynamically acquire computing resources to meet demand
     - Mitigate Disruptions
+
