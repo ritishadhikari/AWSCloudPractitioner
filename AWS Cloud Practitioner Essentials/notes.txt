@@ -126,4 +126,64 @@ Additional Compute Services:
                 other. 
                 - Orchestration tools were created to manage the containers 
             
-        
+AWS Global Infrastructure:
+
+Regions: 
+    - Throughout the globe, AWS builds regions to be closest to the regions where Business
+    traffic demands. 
+    - Each region can be connected to other regions through a high speed fibre network
+    - Four Factors to decide a region:
+        - Compliance: Can the data be authorized to be transported to a separate territory.
+        - Proximity: How close is it to the customer base
+        - Feature Availabilty: Features might not be available for a particular location
+        - Pricing: Some locations are more expensive to operate than other
+
+Availability Zones:
+    - Each Avaialbility Zones can be one or more data centers with redundant power, networking and 
+    connectivity. 
+    - It helps to continue the businesses without interruptions. 
+    - Recommended to run across atleast two availability zones in a region. 
+    - Many AWS services runs at the region level. It means they run synchronously across multiple 
+    AZs without additional effort on our part. Elastic Load Balancer is regional. 
+
+Edge Locations:
+    - If the customer base is away from the data centers or regions. 
+    - Caching copies of data of customers all around the world uses the concept of Content delivery
+    Network. 
+    - CDNs in AWS is called Amazon CloudFront. 
+    - AWS Cloudfront is a service that helps deliver data, videos, application and APIs to customers 
+    around the world with low latency, high transfer speeds. 
+    - AWS CloudFront uses Edge Locations all around the world to help accelarate communications with
+    users, no matter where they are. 
+    - Edge Locations run a Domain Name Service known as Amazon Route 53, helping direct customers 
+    to the correct web locations with reliably low latency. 
+    - AWS Outposts where AWS will install a mini region right inside your data center. 
+
+Provision AWS Resources:
+    - In AWS, everything is an API call
+    - Interacting with AWS Services is possible through:
+        - AWS Management Console
+        - AWS Command Line Interface (CLI)
+            - It allows to make API calls using the terminal on your machine. 
+        - AWS Software Development Kit:
+            - Interacts with AWS resources through various programming languages. 
+            - Helps the developers to create programs that uses AWS without using the low level
+            APIs as well as using the manual API creation. 
+    - We can use managed tools to provision resources like:
+        - AWS Elastic Beanstalk:
+            - Service that allows us to provision Amazon EC2 based environments. 
+            - Provide Application Code and desired Configurations to the service. 
+            - The service than take the information and builds the environment for you.
+            - Save Environment Configurations so that they can be deployed easily.
+            - Helps you to focus on your business application and not on the infrastructure.
+        - AWS Cloud Formation:
+            - Infrastructure as Code tool that is used to define a wide variery of AWS resources 
+            in a declarative way using JSON or YAML text based documents called Cloud Formation 
+            templates. 
+            - It is also not limited to EC2 based solutions unlike in AWS Elastic Beanstalk. It 
+            supports:
+                - Storage
+                - Database
+                - Analytics
+                - Machine Learning, etc
+
