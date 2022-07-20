@@ -187,3 +187,69 @@ Provision AWS Resources:
                 - Analytics
                 - Machine Learning, etc
 
+Networking:
+
+Virtual Private Cloud:
+    - A VPC lets you provision a logically isolated section on the AWS cloud where you can launch 
+    AWS resources in a virtual network that we define.  
+    - These resources can be public facing, i.e., they have access to the internet or private.
+    - The Public and Private grouping of resources are called subnets and there are range of IP addresses in
+    our VPC 
+    - In order to allow traffic from the public internet to flow into and out of your VPC, we must attach an 
+    internet gateway or IGW through to your VPC. 
+    - For a Private Traffic, we would opt for a Private Gateway that only allows people in if they are coming
+    from an approved network, not the public internet. This private gateway is called a virtual private gateway.
+    - Private Gateway allows you to create a VPN connection between a private network like your on-premise
+    data center or internal corporate network to your VPC. 
+    - For Private Data Exchange, we would want the lowest amount of latency possible with the highest amount
+    of security possible. We can achieve that using AWS Direct Connect. 
+    - AWS Direct Connect allows you to establish completely private didicated fiber connection from your
+    data center to AWS. AWS Direct Connect provides a physical line that connects your network to your 
+    AWS VPC. 
+    - One VPC might have multiple types of gateways attached for multiple types of resources all residing in
+    the same VPC just in different Subnets. 
+
+AWS has a wide range of tools that cover every layer of security:   
+    - Network Hardening
+        - Subnets can also control traffic permissions
+        - Every packet that crosses the subnet boundaries gets checked against something called Network
+        Access Control List (Network ACL). 
+        - This check is to see if the packet has permissions to either leave or enter the subnet based on 
+        who it was sent from and how it's trying to communicate. 
+        - A Network ACL only gets to evaluate if a packet croses a subnet boundary in or out. It does not 
+        evaluate if a packet can reach a specific EC2 instance or not.
+        - Instance Level Network Security is for EC2 instance level. Every Instance comes with a Security 
+        Group. By default, the security groups does not allow any traffic into the instance at all. All 
+        ports are blocked. 
+        - We can modify the security group to accept a specific type of traffic. For website, we can allow
+        http traffic to be accepted, but not OS or Admin related traffics. 
+        - Security Groups are stateful, i.e., it remembers which user should be allowed in, while Network
+        ACLs are Stateless, which means they don't remember a set of users but contains List of the attributes
+        of a user who should be allowed in and who should not be allowed in.
+        - Hence with Security Groups, you allow specific traffic in and by default, all traffic is allowed out.
+        - Good Network Security will take advantage of both Network ACLs and Security Groups. 
+    - Application security
+    - User Identity
+    - Authentication and Authorization
+    - Distributed Denial of Service or DDOS prevention
+    - Data Integrity
+    - Encryption, etc. 
+
+            
+
+Amazon Route 53: 
+    - AWS's Domain Name Service. 
+    - It is highly available and Scalable.
+    - DNS is a translational Service. It translates between websites names and IP addresses. 
+    - Route 53 can also direct traffic to different endpoints through several different routing policies:
+        - Latency Based Routing
+        - Geolocation DNS:
+            - Divert Traffic based on where customers are located.
+        - GeoProximity Routing
+        - Weighted RoundRobin
+    - Route 53 can also be used to register domain names by buying and managing it.
+
+Amazon CloudFront:  
+    - It works on the Principles of Content Delivery Network. It is a network that delivers edge content
+    to users based on their geographic location. 
+
