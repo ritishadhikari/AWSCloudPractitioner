@@ -253,3 +253,94 @@ Amazon CloudFront:
     - It works on the Principles of Content Delivery Network. It is a network that delivers edge content
     to users based on their geographic location. 
 
+Storage and Databases:
+
+Amazon Elastic Block Store (Amazon EBS):
+    - We can create virtual Hard Drive that we call EBS volumes, that we can attach to the EC2 instances.
+    - These are separate drives from the local instance store volumes and they are not tied directly to 
+    the host where the EC2 instances is running on.
+    - We define the size, type and configurations for the volume we need and then attach to the EC2 
+    instance.
+    - EBS allows to take incremental backups of your data called as Snapshots. 
+    - It is important that we take snapshots of EBS volumes.
+    - We can restore data from a snapshot incase the drive becomes corrupted.
+
+Amazon Simple Storage Services (S3):
+    - Stores and Retrieves Unlimited Amount of Data at any scale.
+    - Store data as objects and store objects in buckets
+    - Maximum allowable update size per object is 5 TB.
+    - We can version objects to prevent accidental deletion of objects. 
+    - We can create multiple buckets. 
+    - We can limit permission who can have access to which objects.
+    - Tiers offers mechanisms with different storage use cases, such as data which needs to be accessed
+    frequently versus audit data that needs to be retained for several years.
+    - Types of Tiers:
+        - S3 Standard: 
+            - 99.999999999% of durability even after one year. 
+            - Data is stored across 3 different facilities, so multiple copies resides across locations. 
+            - Can be used for static website hosting
+        - S3 Standard-Infrequent Access (S3 Standard-IA): 
+            - Used for data that is accessed less frequently, but requires rapid access when needed. 
+            - Perfect place to store backups and disaster recovery files, etc.
+        - S3 Glacier: 
+            - For retaining audit data which will not be accessed for years. 
+            - Able to retrieve data within a minutes to hours. Upto 12 hours in case of 
+                - S3 Glacier deep archive.
+            - We can implement a Glacier Vault Lock policy and lock the vault if we want.
+            - In a vault lock policy, we can implement WORK (write once, read many) and lock the 
+            policy for future edits.
+        - S3 One Zone-Infrequent Access (S3 One Zone-IA):
+            - Similar to S3 Standard-IA but stores data in a single availabilty zones.
+            - Has a lower storage price than S3 standard-I
+        - S3 Intelligent-Tiering:
+            - Ideal for data with unknown or changing access patterns
+            - Requires a small monthly monitoring and automation fee per object
+
+    - Amazon S3 lifecycle management helps us to move data automatically between tiers. It helps to 
+    take away the burden so that we can focus more on our business needs.
+    - In a Block storage, only the pieces that are changed are updated, while in object storage, the
+    entire object is updated. 
+
+Comparing Amazon EBS and Amazon S3:
+    EBS: 
+        - Sizes upto 16 TB
+        - Solid State by default
+        - HDD options
+    S3:
+        - Unlimited Storage
+        - Individual Object upto 5 TBs
+        - Specialize in Write Once and Read Many
+        - 99.999999999% durable
+
+Amazon Elastic File System:
+    - Managed File System
+    - Multiple Instances can access the data in EFS at the same time. 
+    - It is a Linux File System
+    - Regional Resource, meaning any EC2 instance in the region can write to the EFS file system, while 
+    EBS is confined to the Availability Zone of the EC2 Instance.
+    - Automatically scales (grows and shrinks) unlike in EBS. 
+    - On Premise servers can access Amazon EFS using AWS Direct Connect.
+
+Amazon Relational Database Service (Amazon RDS): 
+    - AWS supported Databases:
+        - MySQL
+        - PostgreSQL
+        - Oracle
+        - Microsoft SQL Server 
+    - RDS is a managed service which supports all the above major database engines
+    - Benefits of using managed Amazon Relational Database Service:
+        - Automated Patching
+        - Backups
+        - Redundancy
+        - Failover
+        - Disaster Recovery
+    - Amazon Aurora:
+        - Managed Relational Database Service from Amazon
+        - Supports MySql and PostgreSQL
+        - Comes at 1/10th the cost of commercial databases. 
+        - Data are replicated across facilities. 6 copies are available at any given time.
+        - Can deploy upto 15 read replicas. 
+        - Provides Continious Backups to S3.
+        - Point in time recovery.
+    
+
