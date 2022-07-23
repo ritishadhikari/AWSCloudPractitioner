@@ -343,4 +343,47 @@ Amazon Relational Database Service (Amazon RDS):
         - Provides Continious Backups to S3.
         - Point in time recovery.
     
+Amazon Dynamo DB:
+    - A Serverless Database
+    - Data is organized into Items and items have Attributes.
+    - Milliseconds response time hence very fast response times. 
+    - It is a non-relational Database. Hence it has simple flexible schemas. 
+    - It is Highly Scalable. 
 
+DynamoDb Vs Amazon RDS:
+    - RDS:
+        - Automatic High Availability
+        - Customer Ownership of Data
+        - Customer Ownership of Schema
+        - Customer control of Network
+    - DynamoDb:
+        - Key-Value
+        - Massive Throughput
+        - PB size potential
+        - Granular API Access
+
+Amazon Redshift:
+    - DataWarehouse for BigData for Historical Analysis.
+    - Loads in Multiple Petabytes
+    - 10 times higher performances than traditional databases.
+
+AWS Data Migration Service (Amazon DMS):
+    - Helps migrate customer's existing Databases onto AWS in a secure and easy fashion.
+    - The source Databases remains fully operational during Migration
+    - Downtime is minimized for applications that rely on that database.
+    - The Source and Target databases don't have to be of the same type. 
+    - Homogenous Migration - Source and Target DataBase are of the same type
+    - Heterogenous Database - Source and Target DataBase are of the different type. Here the 
+    schema structures, DataTypes and Database Codes are different for source and the target. Here
+    the conversion takes place through AWS schema conversion tool before migration. 
+    - Other Features of DMS includes:   
+        - Development and Test Database Migrations from Production
+        - Database Consolidations into one central database.
+        - Continous Database Replication for disaster recovery or for geographic separation.
+
+Additional Database Services:
+    - Amazon Document DB: Great for Content Management (with MongoDb Compatibility)
+    - Amazon Neptune: A Graph Database for recommendation engines and Social Networking
+    - Amazon Quantum Ledger Database: Immutable Ledger where no entry can be removed from the 
+    audits.
+    - Amazon Managed Blockchain:  
